@@ -33,8 +33,8 @@ The script should be able to detect the most common telomeric sequences (`TTAGGG
 The regular expression can be modified depending on your organism of interest. For example, for ciliates, you might change the regular expressions on **line 37 and line 38** to:
 
 ```
-telomere_F = "C{2,4}T{0,2}A{1,3}"
-telomere_R = "T{1,3}A{0,2}G{2,4}"
+telomere_F = "C{3,4}A{2,4}"
+telomere_R = "T{2,4}G{3,4}"
 ```
 
 See [A Broad Phylogenetic Survey Unveils the Diversity and Evolution of Telomeres in Eukaryotes](https://academic.oup.com/gbe/article/5/3/468/582374) for a list of known telomeres.
