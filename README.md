@@ -1,6 +1,6 @@
 # Telomere Search
 
-Simple python script to identify telomeric repeats at the end of contigs from a genome assembly
+Python script to identify telomeric repeats at the start and end of contigs from a genome assembly
 
 Jamie McGowan, 2021
 
