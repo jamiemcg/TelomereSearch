@@ -44,7 +44,7 @@ N_both = []
 N_start_only = []
 N_end_only = []
 
-print("\t".join(["Contig", "First " + str(window_size) + " bp", "Start Repeats", "Start Repeats Count", "Start Repeats Length", "Last " + str(window_size) + " bp", "End Repeats", "End Repeats Cound", "End Repeats Length", "Start Telomere", "End Telomere"]))
+print("\t".join(["Contig", "Length", "First " + str(window_size) + " bp", "Start Repeats", "Start Repeats Count", "Start Repeats Length", "Last " + str(window_size) + " bp", "End Repeats", "End Repeats Cound", "End Repeats Length", "Start Telomere", "End Telomere"]))
 
 for record in SeqIO.parse(fasta_file, "fasta"):
     N_sequences += 1
@@ -85,7 +85,7 @@ for record in SeqIO.parse(fasta_file, "fasta"):
     elif end_telomere_found:
         N_end_only.append(sequence_id)
 
-    print("\t".join(map(str, [sequence_id, contig_start, hits_start, len(hits_start), hits_start_length, contig_end, hits_end, len(hits_end), hits_end_length, start_telomere_found, end_telomere_found])))
+    print("\t".join(map(str, [sequence_id, len(sequence), contig_start, hits_start, len(hits_start), hits_start_length, contig_end, hits_end, len(hits_end), hits_end_length, start_telomere_found, end_telomere_found])))
 
 
 # Print summary
