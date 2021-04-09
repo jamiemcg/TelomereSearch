@@ -13,7 +13,6 @@ Jamie McGowan, 2021
 
 ```
 python TelomereSearch.py -i input.fasta -l length -t threshold
-
 ```
 
 - `-i --input` fasta file containing genome contigs/scaffolds
