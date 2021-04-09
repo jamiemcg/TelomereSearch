@@ -5,7 +5,7 @@
 # 
 # Jamie McGowan, 2021 <jamie.mcgowan@earlham.ac.uk>
 # 
-# Usage: python TelomereSearch.py assembly.fasta
+# Usage: python TelomereSearch.py -i assembly.fasta
 
 import argparse
 import re
