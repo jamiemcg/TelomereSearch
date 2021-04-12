@@ -1,0 +1,26 @@
+Number of sequence searched: 15
+
+Number of sequences with telomeric repeats at both ends (passing threshold): 13
+NC_004325.2 Plasmodium falciparum 3D7 genome assembly, chromosome: 1
+NC_037280.1 Plasmodium falciparum 3D7 genome assembly, chromosome: 2
+NC_000521.4 Plasmodium falciparum 3D7 genome assembly, chromosome: 3
+NC_004318.2 Plasmodium falciparum 3D7 genome assembly, chromosome: 4
+NC_004326.2 Plasmodium falciparum 3D7 genome assembly, chromosome: 5
+NC_004327.3 Plasmodium falciparum 3D7 genome assembly, chromosome: 6
+NC_004328.3 Plasmodium falciparum 3D7 genome assembly, chromosome: 7
+NC_004329.3 Plasmodium falciparum 3D7 genome assembly, chromosome: 8
+NC_004330.2 Plasmodium falciparum 3D7 genome assembly, chromosome: 9
+NC_037281.1 Plasmodium falciparum 3D7 genome assembly, chromosome: 10
+NC_037282.1 Plasmodium falciparum 3D7 genome assembly, chromosome: 11
+NC_004331.3 Plasmodium falciparum 3D7 genome assembly, chromosome: 13
+NC_037283.1 Plasmodium falciparum 3D7 genome assembly, chromosome: 14
+
+Number of sequences with telomeric repeats at start only (passing threshold): 1
+NC_037284.1 Plasmodium falciparum 3D7 genome assembly, chromosome: 12
+
+Number of sequences with telomeric repeats at end only (passing threshold): 0
+
+Parameters Used:
+Target sequences: C{2,4}T{1,2}A{1,3} and T{1,3}A{1,2}G{2,4}
+Window length: 100
+Threshold: 0.4
