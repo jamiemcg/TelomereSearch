@@ -16,6 +16,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input", type = str, help = "Input FASTA file", required = True)
 parser.add_argument("-l", "--length", type = int, help = "Scan the first/last N bp (default = 100 bp)", required = False)
 parser.add_argument("-t", "--threshold", type = float, help = "A telomere is reported if >= X%% of bp scanned is composed of the telomeric repeats (default = 0.4)", required = False)
+parser.add_argument("-f", "--forward", type = str, help = "Regular expression to search start of contig (default = C{2,4}T{1,2}A{1,3}")
+parser.add_argument("-r", "--reverse", type = str, help = "Regular expression to search end of contig (default = T{1,3}A{1,2}G{2,4}")
 
 args = parser.parse_args()
 
@@ -33,10 +35,19 @@ else:
 
 fasta_file = args.input
 
-# Regular expressions for TTAGGG/CCCTAA, allowing some variation
-# Modify these for other organisms
-telomere_F = "C{2,4}T{1,2}A{1,3}"
-telomere_R = "T{1,3}A{1,2}G{2,4}"
+
+if not args.forward and not args.reverse:
+    # Default regular expressions for TTAGGG/CCCTAA, allowing some variation
+    # Modify these for other organisms
+    telomere_F = "C{2,4}T{1,2}A{1,3}"
+    telomere_R = "T{1,3}A{1,2}G{2,4}"
+elif args.forward and args.reverse:
+    telomere_F = args.forward
+    telomere_R = args.reverse
+else:
+    print("Error!")
+    print("If specifying a custom regular expression, you mush supply BOTH forward and reverse sequences using -f and -r parameters")
+    sys.exit(-1)
 
 # Keep track of how many contigs have hits
 N_sequences = 0
@@ -90,6 +101,8 @@ for record in SeqIO.parse(fasta_file, "fasta"):
 
 # Print summary
 
+print()
+print("Input filename:", fasta_file)
 print()
 print("Number of sequence searched:", N_sequences)
 print()
