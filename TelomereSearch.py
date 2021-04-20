@@ -14,7 +14,7 @@ from Bio import SeqIO
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input", type = str, help = "Input FASTA file", required = True)
-parser.add_argument("-l", "--length", type = int, help = "Scan the first/last N bp (default = 100 bp)", required = False)
+parser.add_argument("-l", "--length", type = int, help = "Scan the first/last N bp (default = 200 bp)", required = False)
 parser.add_argument("-t", "--threshold", type = float, help = "A telomere is reported if >= X%% of bp scanned is composed of the telomeric repeats (default = 0.4)", required = False)
 parser.add_argument("-f", "--forward", type = str, help = "Regular expression to search start of contig (default = C{2,4}T{1,2}A{1,3}")
 parser.add_argument("-r", "--reverse", type = str, help = "Regular expression to search end of contig (default = T{1,3}A{1,2}G{2,4}")
@@ -25,7 +25,7 @@ args = parser.parse_args()
 if args.length:
     window_size = int(args.length)
 else:
-    window_size = 100
+    window_size = 200
 
 # Min proportion of nucleotides classified as hits for telomere to be called
 if args.threshold:

@@ -16,8 +16,11 @@ python TelomereSearch.py -i input.fasta -l length -t threshold
 ```
 
 - `-i --input` fasta file containing genome contigs/scaffolds
-- `-l --length` scan the first and last N bp of each sequence [default = 100 bp]
+- `-l --length` scan the first and last N bp of each sequence [default = 200 bp]
 - `-t --threshold` a telomere is reported if >= X% of bp scanned is composed of telomeric repeats [default = 0.4]
+
+
+For the `-l --length` parameter, something in the range between 100 bp and 600 bp seem like a sensible choice but will depend on the assembly quality and species.
 
 **Example Usage**
 
