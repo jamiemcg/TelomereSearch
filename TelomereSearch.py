@@ -138,4 +138,8 @@ print()
 print("Parameters Used:")
 print("Target sequences:", telomere_F, "and", telomere_R)
 print("Window length:", window_size)
-print("Threshold:", threshold)
+
+if args.min_copies:
+    print("Threshold (min copies):", min_copies)
+else:
+    print("Threshold:", threshold)
